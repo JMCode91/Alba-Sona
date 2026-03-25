@@ -147,7 +147,7 @@ h1, h2, h3, h4 {
     justify-content: center;
     text-align: center;
     padding: 0 20px;
-    background-image: linearp-gradient(rgba(54, 48, 52, 0.5), rgba(54, 48, 52, 0.5)), url('img/fondo-hero.webp');
+    background-image: linear-gradient(rgba(54, 48, 52, 0.5), rgba(54, 48, 52, 0.5)), url('img/fondo-hero.webp');
     background-size: cover;
     background-position: center;
     margin-top: 0; 
