@@ -217,12 +217,30 @@ h1, h2, h3, h4 {
 }
 
 .nota-desplazamiento {
-    margin-top: 30px;
+    margin-top: 20px;
     font-size: 0.95rem;
-    background-color: var(--color-fondo);
-    padding: 15px;
-    border-left: 3px solid var(--color-primario);
-    font-weight: 500;
+    color: var(--color-secundario); /* Usamos el morado suave */
+    font-style: italic;
+    opacity: 0.8;
+    /* Quitamos fondo, bordes y paddings extras */
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    text-align: center; /* Lo centramos para que acompañe al logo que está justo arriba */
+}
+
+.esencia-firma {
+    text-align: center;
+    margin: 20px 0; /* Reducimos el margen vertical porque la imagen ya trae su propio aire */
+}
+
+.esencia-firma img {
+    width: 350px; /* Subimos de 180px a 350px para compensar el espacio transparente */
+    max-width: 90%; /* Para que en móviles nunca se salga de la pantalla */
+    height: auto;
+    opacity: 0.9;
+    /* Subimos el logo un poco si ves que hay mucho hueco arriba */
+    margin-top: -20px; 
 }
 
 /* ==========================================================
