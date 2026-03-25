@@ -1,0 +1,297 @@
+/* ==========================================================
+   VARIABLES Y COLORES CORPORATIVOS (ALBA SONA MAKEUP)
+   ========================================================== */
+:root {
+    /* COLORES */
+    --color-fondo: #FAFAFA;
+    --color-texto: #363034;
+    --color-primario: #E0A2A2;
+    --color-secundario: #705567;
+    --color-suave: #FFD7D7;
+    
+    /* TIPOGRAFÍAS */
+    --fuente-titulos: 'Bodoni Moda', serif;
+    --fuente-textos: 'Montserrat', sans-serif;
+}
+
+/* ==========================================================
+   RESET BÁSICO
+   ========================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente-textos);
+    line-height: 1.6;
+    overflow-x: hidden; 
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--fuente-titulos);
+    font-weight: 500; 
+    color: var(--color-texto);
+}
+
+/* ==========================================================
+   CABECERA (HEADER)
+   ========================================================== */
+.cabecera {
+    width: 100%;
+    background-color: var(--color-fondo);
+    padding: 20px 5%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(54, 48, 52, 0.05);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* LOGO EN TEXTO */
+.logo-texto {
+    font-family: var(--fuente-titulos);
+    font-size: 2.4rem;
+    font-style: italic;
+    color: var(--color-texto);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+}
+
+.logo-sub {
+    font-family: var(--fuente-textos);
+    font-size: 0.8rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-style: normal;
+    margin-top: 5px;
+    color: var(--color-secundario);
+}
+
+/* ENLACES DEL MENÚ */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, 
+.nav-links a.activo {
+    color: var(--color-primario);
+}
+
+/* BOTONES */
+.btn-nav {
+    text-decoration: none;
+    background-color: transparent;
+    border: 1px solid var(--color-texto);
+    color: var(--color-texto);
+    padding: 10px 24px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-nav:hover {
+    background-color: var(--color-texto);
+    color: var(--color-fondo);
+}
+
+.btn-principal {
+    display: inline-block;
+    background-color: var(--color-primario);
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 35px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-principal:hover {
+    background-color: var(--color-secundario);
+}
+
+/* ==========================================================
+   PORTADA (HERO SECTION) CON FOTO DE FONDO
+   ========================================================== */
+.hero {
+    height: 100vh; 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    background-image: linear-gradient(rgba(54, 48, 52, 0.5), rgba(54, 48, 52, 0.5)), url('img/fondo-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    margin-top: 0; 
+}
+
+.hero-contenido {
+    max-width: 800px;
+}
+
+.hero h1 {
+    color: var(--color-fondo);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--color-fondo);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ==========================================================
+   SECCIÓN: NUESTRA ESENCIA
+   ========================================================== */
+.esencia {
+    padding: 100px 5%;
+    background-color: #FFFFFF;
+}
+
+.contenedor-esencia {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 60px; 
+    align-items: start; /* Mantiene la foto y el texto alineados por arriba en PC */
+}
+
+.esencia-imagen img {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 15px 40px rgba(54, 48, 52, 0.08); 
+    object-fit: cover;
+}
+
+.esencia-texto h2 {
+    font-size: 2.4rem;
+    color: var(--color-secundario);
+    line-height: 1.2;
+    margin-bottom: 5px;
+    margin-top: -8px; /* Ajuste fino tipográfico */
+}
+
+.subtitulo-esencia {
+    font-size: 1.4rem;
+    color: var(--color-primario);
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.esencia-texto p {
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+    color: var(--color-texto);
+}
+
+.nota-desplazamiento {
+    margin-top: 30px;
+    font-size: 0.95rem;
+    background-color: var(--color-fondo);
+    padding: 15px;
+    border-left: 3px solid var(--color-primario);
+    font-weight: 500;
+}
+
+/* ==========================================================
+   RESPONSIVE (MÓVILES Y TABLETS) - TODO UNIFICADO AQUÍ
+   ========================================================== */
+@media (max-width: 850px) {
+    
+    /* 1. Arreglo de la Cabecera */
+    .cabecera {
+        padding: 10px 5%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 0.75rem;
+    }
+
+    .btn-nav {
+        display: none; /* Ocultamos botón de contacto en barra superior */
+    }
+
+    /* 2. Arreglo de la Portada (Hero) */
+    .hero {
+        background-position: 20% center; /* Enfoca a Alba */
+    }
+
+    .hero h1 {
+        font-size: 2.8rem; 
+        line-height: 1.2;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* 3. Arreglo de la sección Esencia (El local) */
+    .contenedor-esencia {
+        grid-template-columns: 1fr; /* Pasa a 1 sola columna (Foto arriba, texto abajo) */
+        gap: 25px; /* Reduce el hueco entre foto y texto */
+    }
+
+    /* ... (resto de tu código móvil) ... */
+
+    /* 4. Arreglo de la foto del local para que no ocupe toda la pantalla */
+    .esencia {
+        padding: 60px 5%; /* Reducimos el padding superior/inferior que en PC era de 100px */
+    }
+
+    .esencia-imagen img {
+        height: 300px; /* Forzamos a que sea más bajita */
+        object-fit: cover; /* Hace que se recorte limpiamente sin aplastarse ni deformarse */
+        object-position: center; /* Centra el recorte para que se vea el espejo y la silla */
+    }
+
+    .esencia-texto {
+        text-align: left; /* Mantiene la elegancia alineando a la izquierda */
+    }
+
+    .nota-desplazamiento {
+        text-align: left; 
+    }
+}
