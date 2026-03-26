@@ -597,7 +597,16 @@ h1, h2, h3, h4 {
     }
 
     .btn-nav {
-        display: none;
+        display: inline-block;
+        background-color: transparent;
+        border: 1px solid var(--color-texto);
+        color: var(--color-texto);
+        margin-top: 15px;
+        padding: 8px 20px;
+        font-size: 0.85rem;
+        width: auto;
+        text-align: center;
+        transition: all 0.3s ease;
     }
 
     /* ===== HERO PRINCIPAL ===== */
