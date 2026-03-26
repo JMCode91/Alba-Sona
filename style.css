@@ -43,42 +43,40 @@ h1, h2, h3, h4 {
 .cabecera {
     width: 100%;
     background-color: var(--color-fondo);
-    padding: 20px 5%;
     position: fixed;
     top: 0;
-    z-index: 100;
+    z-index: 1000; /* Aseguramos que esté por encima de todo */
     box-shadow: 0 2px 10px rgba(54, 48, 52, 0.05);
+    padding: 0; /* Reducimos al mínimo para que no ocupe espacio innecesario */
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
+    align-items: center; /* Centrado vertical perfecto del logo y el menú */
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 3px 5%; /* Menos padding vertical para compactar aún más */
+    height: 76px; /* Altura más cercana a la original y menos invasiva */
 }
 
-/* LOGO EN TEXTO */
-.logo-texto {
-    font-family: var(--fuente-titulos);
-    font-size: 2.4rem;
-    font-style: italic;
-    color: var(--color-texto);
-    text-decoration: none;
+/* LOGO EN IMAGEN */
+.logo-wrapper {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    line-height: 1;
+    text-decoration: none;
+    line-height: 0;
+    height: 100%; /* Se adapta a los 90px del navbar */
+    overflow: visible; /* Permitimos que el logo "respire" */
+    /* Aseguramos que el logo se pegue a la izquierda del contenedor */
+    margin-left: -5px; /* Ajuste sutil para alienarlo visualmente al borde del 5% */
 }
 
-.logo-sub {
-    font-family: var(--fuente-textos);
-    font-size: 0.8rem;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    font-style: normal;
-    margin-top: 5px;
-    color: var(--color-secundario);
+.logo-wrapper img {
+        height: 95px; /* Logo más compacto con menos impacto vertical */
+        width: auto;
+        transform: scale(1.05); /* Muy ligero escalado para densidad visual */
+    transition: transform 0.3s ease;
 }
 
 /* ENLACES DEL MENÚ */
@@ -149,7 +147,7 @@ h1, h2, h3, h4 {
     padding: 0 20px;
     background-image: linear-gradient(rgba(54, 48, 52, 0.5), rgba(54, 48, 52, 0.5)), url('img/fondo-hero.webp');
     background-size: cover;
-    background-position: center;
+    background-position: left center;
     margin-top: 0; 
 }
 
@@ -578,35 +576,67 @@ h1, h2, h3, h4 {
 @media (max-width: 768px) {
     /* ===== CABECERA ===== */
     .cabecera {
-        padding: 10px 5%;
+        padding: 4px 5%; /* Cabecera móvil más compacta */
     }
 
+    /* 2.1 - Navbar Móvil: Estructura de columna doble */
     .navbar {
-        flex-direction: column;
-        gap: 10px;
+        display: flex;
+        flex-direction: column; /* Forzamos logo arriba, menú debajo */
+        justify-content: center;
+        align-items: center; /* Centrado horizontal absoluto de todos los elementos */
+        height: 160px; /* Dejamos que la altura se adapte al contenido doble */
+        padding: 0px 5% 2px 5%; /* Menos padding superior e inferior */
+    }
+
+    /* 2.4 - Menú estilo original (horizontal debajo del logo) */
+    .menu-toggle {
+        display: none; /* No usamos hamburguesa para este diseño, mantengo oculto */
     }
 
     .nav-links {
-        gap: 15px;
-        flex-wrap: wrap;
+        display: flex;
+        flex-wrap: wrap; /* Permitimos ajuste en líneas para pantallas más pequeñas */
         justify-content: center;
+        gap: 14px;
+        width: 100%;
+        text-align: center;
+        margin: 2px 0 6px;
+        padding: 0;
+        overflow-x: visible; /* Sin scroll lateral forzado */
+    }
+
+    .nav-links li {
+        display: inline-block;
+        margin-bottom: 0;
+        white-space: normal; /* Se permite ajustar en varias líneas si hace falta */
     }
 
     .nav-links a {
-        font-size: 0.75rem;
+        font-size: 0.82rem; /* Ligero ajuste para tamaño pequeño */
     }
 
     .btn-nav {
-        display: inline-block;
-        background-color: transparent;
-        border: 1px solid var(--color-texto);
-        color: var(--color-texto);
-        margin-top: 15px;
-        padding: 8px 20px;
-        font-size: 0.85rem;
+        margin: 4px auto 10px; /* Centrado y menor separación inferior */
+    }
+
+    .logo-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        margin: 0 auto;
+        padding: 0;
+        line-height: 0;
+    }
+
+    .logo-wrapper img {
+        height: 60px; /* Logo móvil más grande para el ajuste final */
         width: auto;
-        text-align: center;
-        transition: all 0.3s ease;
+        transform: scale(1.6);
+        margin-bottom: 0px;
+        object-fit: contain;
+        margin-top: 25px;
     }
 
     /* ===== HERO PRINCIPAL ===== */
