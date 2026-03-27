@@ -694,8 +694,19 @@ h1, h2, h3, h4 {
 
 @media (max-width: 768px) {
     /* ===== CABECERA ===== */
-    .cabecera {
-        padding: 4px 5%; /* Cabecera móvil más compacta */
+    .cabecera { /* ⚠️ Asegúrate de que esta es tu clase del header blanco */
+        /* Reducimos el padding-top de 40px a 20px. Así subimos el logo */
+        padding-top: 20px !important; 
+        
+        /* Mantenemos el resto de estilos para que no se descuadre */
+        padding-bottom: 20px; /* Un poco de aire abajo también */
+        width: 100% !important;
+        box-sizing: border-box;
+        margin: 0; 
+        left: 0;
+        display: flex; /* Para alinear logo y menú */
+        justify-content: space-between; /* Logo a la izq, menú a la der */
+        align-items: center; /* Centrado vertical */
     }
 
     /* 2.1 - Navbar Móvil: Estructura de columna doble */
@@ -739,23 +750,24 @@ h1, h2, h3, h4 {
         margin: 4px auto 10px; /* Centrado y menor separación inferior */
     }
 
-    .logo-wrapper {
+    .hero-contenido { /* ⚠️ Cambia por la clase que envuelve tu texto y botón del hero */
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+        text-align: center; /* Centra el botón perfectamente */
         display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        margin: 0 auto;
-        padding: 0;
-        line-height: 0;
+        flex-direction: column;
+        align-items: center; /* Fuerza el centrado del botón si usa flexbox */
     }
 
     .logo-wrapper img {
-        height: 60px; /* Logo móvil más grande para el ajuste final */
-        width: auto;
+        height: 75px; /* Logo móvil más grande para el ajuste final */
+        width: 100%;
         transform: scale(1.6);
         margin-bottom: 0px;
         object-fit: contain;
         margin-top: 25px;
+        overflow-x: hidden;
     }
 
     /* ===== HERO PRINCIPAL ===== */
