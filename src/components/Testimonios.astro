@@ -1,0 +1,67 @@
+---
+import { Image } from 'astro:assets';
+import testimonioImg from '../assets/img/testimonio-hero.webp';
+---
+
+<section class="testimonios">
+    <div class="contenedor-testimonios">
+        <div class="testimonios-panel">
+            <h2 class="testimonios-titulo">Historias reales contadas por ellas.</h2>
+            <p class="testimonios-subtitulo">Experiencias Alba Sona</p>
+
+            <div class="testimonios-slider">
+                
+                <div class="testimonio-slide activo">
+                    <p class="testimonio-texto">"Nunca me habían trabajado tanto y tan bien la piel, es una profesional de los pies a la cabeza! me hizo exactamente lo que quería y lo más importante: me duró todo el día. Materiales limpios, productos pre-maquillaje y maquillaje TOP."</p>
+                    <p class="testimonio-autor">Lucia<span class="testimonio-origen"> vía Bodas.net</span></p>
+                </div>
+                
+                <div class="testimonio-slide">
+                    <p class="testimonio-texto">"Decidí confiar en Alba para el maquillaje de mi boda. Es la mejor decisión que pude tomar, no solo me ha hecho sentir cómoda en todo momento, también que me ha hecho verme preciosa en mi día! Todos me decían lo guapa que estaba! Es una gran profesional y sin dudarlo volveria a contar con ella."</p>
+                    <p class="testimonio-autor">Miriam<span class="testimonio-origen"> vía Bodas.net</span></p>
+                </div>
+
+                <div class="testimonio-slide">
+                    <p class="testimonio-texto">"Alba fue sin duda alguna un gran acierto. Desde el primer momento captó mi idea y lo hizo genial. El día de la boda estaba muy nerviosa y aparte de maquillarme me tranquilizo y me acompañó en todo el proceso. Sin duda alguna volvería a contratarla mil veces."</p>
+                    <p class="testimonio-autor">Ainhoa<span class="testimonio-origen"> vía Bodas.net</span></p>
+                </div>
+
+                <div class="slider-indicadores">
+                     <span class="dot activo"></span>
+                     <span class="dot"></span>
+                     <span class="dot"></span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="testimonios-imagen">
+            <Image src={testimonioImg} alt="Maquillaje elegante realizado por Alba Sona" />
+        </div>
+    </div>
+</section>
+
+<script>
+    // Astro procesa este script y lo ejecuta en el cliente automáticamente
+    const slides = document.querySelectorAll('.testimonio-slide');
+    const dots = document.querySelectorAll('.dot'); 
+    
+    if (slides.length > 0) {
+        let currentSlide = 0;
+
+        function nextSlide() {
+            // 1. Apagamos el slide y el punto actual
+            slides[currentSlide].classList.remove('activo');
+            if (dots.length > 0) dots[currentSlide].classList.remove('activo');
+            
+            // 2. Calculamos el siguiente
+            currentSlide = (currentSlide + 1) % slides.length;
+            
+            // 3. Encendemos el nuevo slide y su punto correspondiente
+            slides[currentSlide].classList.add('activo');
+            if (dots.length > 0) dots[currentSlide].classList.add('activo');
+        }
+
+        setInterval(nextSlide, 6000);
+    }
+</script>

@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets';
+import fondoHero from '../assets/img/fondo-hero.webp';
+---
+
+<section class="hero">
+    <div class="hero-contenido">
+        <h1>Belleza real</h1>
+        <p>Maquillaje para novias e invitadas que quieran sentirse seguras y favorecidas.</p>
+        <a href="/portfolio" class="btn-principal">Ver Portfolio</a>
+    </div>
+</section>
+
+<style>
+    /* Si quieres mover el estilo específico del Hero aquí para 
+       encapsularlo, puedes hacerlo, si no, se leerá de tu style.css global */
+    .hero {
+        background-image: linear-gradient(rgba(54, 48, 52, 0.5), rgba(54, 48, 52, 0.5)), url('../assets/img/fondo-hero.webp');
+    }
+</style>

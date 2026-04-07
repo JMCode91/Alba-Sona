@@ -1,0 +1,243 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Servicios | Alba Sona MAKEUP">
+    
+    <section class="hero-servicios">
+        <div class="servicios-intro">
+            <h1>Servicios de Maquillaje</h1>
+            
+        </div>
+    </section>
+
+    <section class="servicios-contenedor">
+        <div class="servicios-grid">
+
+            <article class="servicio-card">
+                <div class="servicio-header">
+                    <h2>Servicio de Novia</h2>
+                </div>
+                <div class="servicio-body">
+                    <p>Acompaño a novias que quieren sentirse ellas mismas el día de su boda. Creo maquillajes que respetan tu esencia y te hacen sentir tranquila, segura y preciosa desde el primer momento.</p>
+                    <h4>Incluye:</h4>
+                    <ul>
+                        <li>Asesoramiento previo según tu estilo y necesidades.</li>
+                        <li>Prueba de maquillaje personalizada.</li>
+                        <li>Acompañamiento el día de la boda.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="servicio-card">
+                <div class="servicio-header">
+                    <h2>Invitada y Eventos</h2>
+                </div>
+                <div class="servicio-body">
+                    <p>Estaré encantada de maquillarte para cualquier evento especial al que te hayan invitado: bodas, graduaciones, sesiones de fotos, fallas...</p>
+                </div>
+            </article>
+
+            <article class="servicio-card">
+                <div class="servicio-header">
+                    <h2>Automaquillaje</h2>
+                </div>
+                <div class="servicio-body">
+                    <p>Pensado para mujeres que se sienten perdidas con su rutina, dudan de cómo usar sus productos y buscan aprender a verse más favorecidas de forma fácil, práctica y sin complicaciones.</p>
+                    <h4>Aprenderás:</h4>
+                    <ul>
+                        <li>Análisis de tu tipo de piel.</li>
+                        <li>Rutina paso a paso personalizada.</li>
+                        <li>Revisión de tus productos actuales.</li>
+                        <li>Técnicas profesionales adaptadas a tu día a día.</li>
+                    </ul>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="cta-cierre">
+        <h2>¿Quieres reservar tu fecha?</h2>
+        <p>Cuéntame qué necesitas y prepararé un presupuesto a tu medida sin compromiso.</p>
+        <a href="/contacto" class="btn-reserva">Solicitar Información</a>
+    </section>
+
+</BaseLayout>
+
+<style>
+    /* VARIABLES DE LA IDENTIDAD CORPORATIVA DE ALBA SONA */
+    :root {
+        --morado-oscuro: #363034;
+        --morado-claro: #705567;
+        --rosa-oscuro: #E0A2A2;
+        --rosa-claro: #FFD7D7;
+        --fondo-web: #FAFAFA; 
+    }
+
+    body {
+        background-color: var(--fondo-web);
+    }
+
+    /* 1. CABECERA SUAVE */
+    .hero-servicios {
+        background-color: var(--rosa-claro); 
+        padding: 160px 20px 80px;
+        text-align: center;
+    }
+    
+    .servicios-intro {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .servicios-intro h1 {
+        font-family: var(--fuente-titulos); /* Usamos tu variable global */
+        font-size: 3.2rem;
+        font-weight: 500; 
+        color: var(--color-texto); /* Usamos también tu color global para unificar */
+        margin-bottom: 20px;
+        letter-spacing: 0.5px;
+    }
+    
+    .servicios-intro p {
+        font-family: 'Montserrat', sans-serif;
+        color: var(--morado-claro); /* Tono suave corporativo */
+        font-weight: 400; /* Párrafo limpio y ligero */
+        font-size: 1.15rem;
+        line-height: 1.6;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    /* 2. GRID DE SERVICIOS */
+    .servicios-contenedor {
+        max-width: 1200px;
+        margin: -40px auto 80px; 
+        padding: 0 20px;
+    }
+    
+    .servicios-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+    }
+    
+    .servicio-card {
+        background: #ffffff;
+        border: 1px solid rgba(224, 162, 162, 0.4); 
+        padding: 50px 40px;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease;
+    }
+    
+    .servicio-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .servicio-header h2 {
+        font-family: var(--fuente-titulos); /* Usamos tu variable global */
+        font-size: 2.1rem;
+        font-weight: 500; 
+        color: var(--color-texto);
+        margin-bottom: 25px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--color-primario);
+        letter-spacing: 0.5px;
+    }
+    
+    .servicio-body {
+        flex-grow: 1;
+    }
+
+    .servicio-body p {
+        font-family: 'Montserrat', sans-serif;
+        color: var(--morado-claro); /* Texto descriptivo en el morado claro para dar contraste suave */
+        line-height: 1.8;
+        margin-bottom: 25px;
+        font-size: 0.95rem;
+        font-weight: 400;
+    }
+    
+    .servicio-body h4 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.9rem;
+        color: var(--morado-oscuro);
+        margin-bottom: 15px;
+        font-weight: 600; /* Resalta sutilmente sobre el texto normal */
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+    }
+    
+    .servicio-body ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+    }
+    
+    .servicio-body ul li {
+        font-family: 'Montserrat', sans-serif;
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 12px;
+        color: var(--morado-claro);
+        font-weight: 400;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    
+    .servicio-body ul li::before {
+        content: '■';
+        position: absolute;
+        left: 0;
+        top: -2px;
+        color: var(--rosa-oscuro);
+        font-size: 0.8rem;
+    }
+
+    /* 3. CALL TO ACTION */
+    .cta-cierre {
+        text-align: center;
+        padding: 60px 20px;
+        background-color: var(--morado-oscuro);
+        margin-top: 40px;
+    }
+
+    .cta-cierre h2 {
+        font-family: 'Bodoni Moda', serif;
+        font-size: 2.2rem;
+        font-weight: 500;
+        color: #ffffff;
+        margin-bottom: 15px;
+        letter-spacing: 0.5px;
+    }
+
+    .cta-cierre p {
+        font-family: 'Montserrat', sans-serif;
+        color: var(--rosa-claro);
+        font-weight: 400;
+        margin-bottom: 35px;
+        font-size: 1.1rem;
+    }
+
+    .btn-reserva {
+        display: inline-block;
+        background-color: var(--rosa-oscuro);
+        color: var(--morado-oscuro);
+        font-weight: 600; 
+        font-family: 'Montserrat', sans-serif;
+        text-decoration: none;
+        padding: 15px 35px;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: background-color 0.3s;
+    }
+
+    .btn-reserva:hover {
+        background-color: var(--rosa-claro);
+    }
+
+    
+</style>

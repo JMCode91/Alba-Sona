@@ -1,0 +1,30 @@
+---
+import { Image } from 'astro:assets';
+import esenciaImg from '../assets/img/esencia.webp';
+import firmaLogo from '../assets/img/Logo PNG.png';
+---
+
+<section class="esencia" id="estudio">
+    <div class="contenedor-esencia">
+        <div class="esencia-imagen">
+            <Image src={esenciaImg} alt="Estudio de maquillaje Alba Sona" />
+        </div>
+        
+        <div class="esencia-texto">
+            <h2>Detrás de cada maquillaje hay una historia...</h2>
+            <h3 class="subtitulo-esencia">y mi trabajo es saber escucharla.</h3>
+            
+            <p>Soy maquilladora profesional especializada en maquillaje social y novias. Mi enfoque se centra en resaltar lo que te hace única, sin disfrazarte.</p>
+            
+            <p>Creo en la belleza real, en la piel bien trabajada y en la importancia de que disfrutes el proceso tanto como el resultado.</p>
+            
+            <div class="esencia-firma">
+                <Image src={firmaLogo} alt="Firma Alba Sona Makeup" width={350} />
+            </div>
+
+            <p class="nota-desplazamiento">
+                <i class="italic">Trabajo a domicilio o en mi propio estudio, según lo que necesites.</i>
+            </p>
+        </div>
+    </div>
+</section>

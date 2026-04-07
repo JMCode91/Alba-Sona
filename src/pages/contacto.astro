@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+
+// Importamos los iconos para que Astro los optimice automáticamente
+import iconInstaPink from '../assets/img/icon-instagram-pink.png';
+import iconInstaColor from '../assets/img/icon-instagram-color.png';
+import iconFbPink from '../assets/img/icon-facebook-pink.png';
+import iconFbColor from '../assets/img/icon-facebook-color.png';
+import iconWaPink from '../assets/img/icon-whatsapp-pink.png';
+import iconWaColor from '../assets/img/icon-whatsapp-color.png';
+---
+
+<BaseLayout title="Contacto | Alba Sona MAKEUP | Maquillaje Profesional">
+    
+    <section class="hero-contacto">
+        <div class="hero-contenido">
+            <h1>Ponte en contacto conmigo</h1>
+            <p>¿Tienes una boda, evento especial o proyecto en mente? Me encantaría ayudarte a crear el maquillaje perfecto para tu día.</p>
+        </div>
+    </section>
+
+    <section class="contacto-contenedor" id="contacto">
+        <div class="contacto-grid">
+            
+            <div class="contacto-info">
+                <h2>Mi Información de Contacto</h2>
+                
+                <div class="info-item">
+                    <h3>Ubicación</h3>
+                    <p>Calle Belleza, 42<br>
+                    28001 Madrid, España<br>
+                    Estudio privado exclusivo</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>Teléfono</h3>
+                    <p>+34 612 345 678</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>Email</h3>
+                    <p>info@albasonamakeup.com</p>
+                </div>
+
+                
+            </div>
+
+            <div class="contacto-metodos">
+                <h2>Sígueme y Contáctame</h2>
+                
+                <div class="contacto-grid">
+                    <div class="contacto-card">
+                        <div class="icono-wrapper">
+                            <Image src={iconInstaPink} alt="Instagram" class="icon-default" />
+                            <Image src={iconInstaColor} alt="Instagram" class="icon-hover" />
+                        </div>
+                        <h3>Instagram</h3>
+                        <p>@albasonamakeup</p>
+                        <a href="https://www.instagram.com/albasonamakeup" target="_blank" class="btn-principal">Seguir</a>
+                    </div>
+
+                    <div class="contacto-card">
+                        <div class="icono-wrapper">
+                            <Image src={iconFbPink} alt="Facebook" class="icon-default" />
+                            <Image src={iconFbColor} alt="Facebook" class="icon-hover" />
+                        </div>
+                        <h3>Facebook</h3>
+                        <p>Alba Sona Makeup</p>
+                        <a href="https://www.facebook.com/albasonamakeup" target="_blank" class="btn-principal">Seguir</a>
+                    </div>
+
+                    <div class="contacto-card">
+                        <div class="icono-wrapper">
+                            <Image src={iconWaPink} alt="WhatsApp" class="icon-default" />
+                            <Image src={iconWaColor} alt="WhatsApp" class="icon-hover" />
+                        </div>
+                        <h3>WhatsApp</h3>
+                        <p>+34 612 345 678</p>
+                        <a href="https://wa.me/34612345678" target="_blank" class="btn-principal">Escribir</a>
+                    </div>
+                </div>
+
+                <div class="nota-contacto">
+                    <p>✨ Respondo todos los mensajes en un máximo de 24 horas. Para citas urgentes, prefiero contactar por WhatsApp.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-cierre">
+        <h2>¿Listo para tu transformación?</h2>
+        <p>Envíame un mensaje con los detalles de tu evento o proyecto</p>
+        <a href="https://wa.me/34612345678" class="btn-principal">Contactar por WhatsApp</a>
+    </section>
+
+</BaseLayout>

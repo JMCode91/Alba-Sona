@@ -1,0 +1,9 @@
+# Dependencias
+node_modules/
+
+# Archivos de construcción (Astro)
+dist/
+
+# Cache y logs
+.astro/
+npm-debug.log*

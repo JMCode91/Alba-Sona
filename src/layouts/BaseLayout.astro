@@ -1,0 +1,62 @@
+---
+import '../styles/style.css';
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="cabecera">
+        <nav class="navbar">
+            <a href="/" class="logo-wrapper">
+                <img src="/img/Logo PNG.png" alt="Sona Alba Makeup Logotipo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/servicios">Servicios</a></li>
+            </ul>
+            <a href="/contacto" class="btn-nav">Contactar</a>
+        </nav>
+    </header>
+
+    <main>
+        <slot /> </main>
+
+    <footer class="pie-pagina">
+        <div class="contenedor-footer">
+            <div class="footer-logo">
+                Alba Sona <span>Makeup</span>
+            </div>
+            <nav class="footer-nav">
+                <a href="/">Inicio</a>
+                <a href="/portfolio">Portfolio</a>
+                <a href="/servicios">Servicios</a>
+                <a href="/contacto">Contacto</a>
+            </nav>
+            <div class="footer-redes">
+                <p>Sígueme en mis redes para ver mi trabajo diario</p>
+                <div class="iconos-sociales">
+                    <a href="https://www.instagram.com/albasonamakeup" target="_blank"><img src="/img/icon-instagram-pink.png" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/albasonamakeup" target="_blank"><img src="/img/icon-facebook-pink.png" alt="Facebook"></a>
+                    <a href="https://wa.me/34612345678" target="_blank"><img src="/img/icon-whatsapp-pink.png" alt="WhatsApp"></a>
+                </div>
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2026 Alba Sona Makeup. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
