@@ -65,15 +65,26 @@ import fondoHero from '../assets/img/fondo-hero.webp';
         background-color: var(--color-secundario);
     }
 
-    /* =========================================
+   /* =========================================
        RESPONSIVE MOBILE
        ========================================= */
-    @media (max-width: 768px) {
+   @media (max-width: 768px) {
         .hero { 
-            padding-top: 360px; 
+            /* 🔥 LA SOLUCIÓN AL SOLAPAMIENTO 🔥 */
+            /* 1. Empujamos TODA la sección hacia abajo para sacarla de detrás de la cabecera */
+            margin-top: 130px; /* Ajusta este valor si tu cabecera es un pelín más gorda o fina */
+            
+            /* 2. Reducimos el padding interno para que el texto no se vaya demasiado abajo */
+            padding-top: 200px; 
+            
             height: auto;
-            min-height: 100vh;
-            background-position: left center;
+            /* 3. Calculamos la altura para que ocupe la pantalla, restándole la cabecera */
+            min-height: calc(100vh - 130px); 
+            
+            /* 4. Como ya no hay solapamiento, podemos poner la foto en tamaño normal y anclada arriba */
+            background-size: cover; 
+            background-position: left top; 
+            
             align-items: flex-start; 
         }
         .hero-contenido { width: 100%; padding: 0 20px; }
