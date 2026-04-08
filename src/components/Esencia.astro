@@ -28,3 +28,76 @@ import firmaLogo from '../assets/img/Logo PNG.png';
         </div>
     </div>
 </section>
+
+<style>
+    /* =========================================
+       ESTILOS ENCAPSULADOS DE LA ESENCIA
+       ========================================= */
+    .esencia { padding: 100px 5%; background-color: #FFFFFF; }
+    
+    .contenedor-esencia {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        gap: 60px; 
+        align-items: start;
+    }
+    
+    .esencia-imagen img {
+        width: 100%;
+        height: auto;
+        object-fit: cover; 
+        display: block;
+        border-radius: 4px; /* Suaviza la foto */
+    }
+    
+    .esencia-texto h2 { 
+        font-family: var(--fuente-titulos);
+        font-size: 2.4rem; 
+        color: var(--color-secundario); 
+        font-weight: 500;
+        line-height: 1.2; 
+        margin-bottom: 5px; 
+        margin-top: -8px; 
+    }
+    
+    .subtitulo-esencia { 
+        font-family: var(--fuente-textos);
+        font-size: 1.4rem; 
+        color: var(--color-primario); 
+        font-style: italic; 
+        font-weight: 400; 
+        margin-bottom: 30px; 
+    }
+    
+    .esencia-texto p { 
+        font-family: var(--fuente-textos);
+        font-size: 1.05rem; 
+        margin-bottom: 20px; 
+        color: var(--color-texto); 
+        line-height: 1.6;
+    }
+    
+    .nota-desplazamiento { 
+        margin-top: 20px; 
+        font-size: 0.95rem; 
+        color: var(--color-secundario); 
+        font-style: italic; 
+        opacity: 0.8; 
+        text-align: center; 
+    }
+    
+    .esencia-firma { text-align: center; margin: 20px 0; }
+    .esencia-firma img { width: 350px; max-width: 90%; height: auto; opacity: 0.9; margin-top: -20px; }
+
+    /* =========================================
+       RESPONSIVE MOBILE
+       ========================================= */
+    @media (max-width: 768px) {
+        .esencia { padding: 40px 5%; }
+        .contenedor-esencia { grid-template-columns: 1fr; gap: 20px; }
+        .esencia-imagen img { height: 300px; order: 2; }
+        .esencia-texto { text-align: left; order: -1; }
+    }
+</style>

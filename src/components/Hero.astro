@@ -12,9 +12,72 @@ import fondoHero from '../assets/img/fondo-hero.webp';
 </section>
 
 <style>
-    /* Si quieres mover el estilo específico del Hero aquí para 
-       encapsularlo, puedes hacerlo, si no, se leerá de tu style.css global */
+    /* =========================================
+       ESTILOS ENCAPSULADOS DEL HERO
+       ========================================= */
     .hero {
+        height: 100vh; 
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 20px;
         background-image: linear-gradient(rgba(54, 48, 52, 0.5), rgba(54, 48, 52, 0.5)), url('../assets/img/fondo-hero.webp');
+        background-size: cover;
+        background-position: left center;
+    }
+
+    .hero-contenido { max-width: 800px; }
+    
+    .hero h1 { 
+        font-family: var(--fuente-titulos);
+        color: var(--color-fondo); 
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); 
+        font-weight: 500;
+        font-size: 4rem; /* Tamaño escritorio aproximado */
+    }
+    
+    .hero p {
+        font-family: var(--fuente-textos);
+        font-size: 1.2rem;
+        color: var(--color-fondo);
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .btn-principal {
+        font-family: var(--fuente-textos);
+        display: inline-block;
+        background-color: var(--color-primario);
+        color: #fff;
+        text-decoration: none;
+        padding: 15px 35px;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        margin-top: 30px;
+        transition: background-color 0.3s ease;
+        border-radius: 4px; /* Opcional, para suavizar bordes */
+    }
+
+    .btn-principal:hover {
+        background-color: var(--color-secundario);
+    }
+
+    /* =========================================
+       RESPONSIVE MOBILE
+       ========================================= */
+    @media (max-width: 768px) {
+        .hero { 
+            padding-top: 360px; 
+            height: auto;
+            min-height: 100vh;
+            background-position: left center;
+            align-items: flex-start; 
+        }
+        .hero-contenido { width: 100%; padding: 0 20px; }
+        .hero h1 { font-size: 2.2rem; line-height: 1.2; margin-bottom: 15px; }
+        .hero p { font-size: 1rem; }
     }
 </style>

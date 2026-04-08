@@ -81,23 +81,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     /* 1. CABECERA SUAVE */
     .hero-servicios {
-        background-color: var(--rosa-claro); 
+        background-color: var(--color-suave); /* Obligamos a usar el mismo rosa global */
         padding: 160px 20px 80px;
         text-align: center;
     }
-    
     .servicios-intro {
         max-width: 800px;
         margin: 0 auto;
     }
 
     .servicios-intro h1 {
-        font-family: var(--fuente-titulos); /* Usamos tu variable global */
-        font-size: 3.2rem;
+        font-family: var(--fuente-titulos);
+        font-size: 3.2rem; /* Tamaño grande de escritorio */
         font-weight: 500; 
-        color: var(--color-texto); /* Usamos también tu color global para unificar */
+        color: var(--color-texto);
         margin-bottom: 20px;
         letter-spacing: 0.5px;
+        font-variation-settings: "opsz" 12; 
     }
     
     .servicios-intro p {
@@ -197,11 +197,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
 
     /* 3. CALL TO ACTION */
-    .cta-cierre {
-        text-align: center;
-        padding: 60px 20px;
-        background-color: var(--morado-oscuro);
-        margin-top: 40px;
+    .cta-cierre { 
+        background: linear-gradient(135deg, var(--color-secundario) 0%, #4a3644 100%); 
+        padding: 80px 5%; 
+        text-align: center; 
+        margin: 80px 0 0 0; 
     }
 
     .cta-cierre h2 {
@@ -237,6 +237,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     .btn-reserva:hover {
         background-color: var(--rosa-claro);
+    }
+
+    @media (max-width: 768px) {
+        .hero-servicios {
+            /* Al estar dentro del @media, esto solo afecta al móvil */
+            padding-top: 250px; /* Lo bajamos a 250px para que no quede tanto hueco rosa */
+            padding-bottom: 40px;
+        }
+
+        .servicios-intro h1 {
+            font-size: 2.2rem; /* Sobrescribimos el tamaño solo en móvil */
+        }
+
+        .servicios-intro p {
+            font-size: 1rem;
+            padding: 0 10px;
+        }
+
+        .servicio-header h2 {
+            font-size: 1.8rem;
+        }
+
+        .servicios-contenedor {
+            padding: 0 15px; 
+            margin-top: -20px; 
+        }
+
+        .servicio-card {
+            padding: 35px 25px; 
+        }
     }
 
     

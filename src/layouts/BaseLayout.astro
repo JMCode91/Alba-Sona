@@ -1,5 +1,13 @@
 ---
 import '../styles/style.css';
+import { Image } from 'astro:assets';
+
+// 1. Importamos las imágenes directamente desde tu carpeta assets
+import logoPrincipal from '../assets/img/Logo PNG.png';
+import iconInsta from '../assets/img/icon-instagram-pink.png';
+import iconFb from '../assets/img/icon-facebook-pink.png';
+import iconWa from '../assets/img/icon-whatsapp-pink.png';
+
 interface Props {
   title: string;
 }
@@ -20,7 +28,7 @@ const { title } = Astro.props;
     <header class="cabecera">
         <nav class="navbar">
             <a href="/" class="logo-wrapper">
-                <img src="/img/Logo PNG.png" alt="Sona Alba Makeup Logotipo">
+                <Image src={logoPrincipal} alt="Sona Alba Makeup Logotipo" />
             </a>
             <ul class="nav-links">
                 <li><a href="/">Inicio</a></li>
@@ -32,7 +40,8 @@ const { title } = Astro.props;
     </header>
 
     <main>
-        <slot /> </main>
+        <slot /> 
+    </main>
 
     <footer class="pie-pagina">
         <div class="contenedor-footer">
@@ -48,9 +57,15 @@ const { title } = Astro.props;
             <div class="footer-redes">
                 <p>Sígueme en mis redes para ver mi trabajo diario</p>
                 <div class="iconos-sociales">
-                    <a href="https://www.instagram.com/albasonamakeup" target="_blank"><img src="/img/icon-instagram-pink.png" alt="Instagram"></a>
-                    <a href="https://www.facebook.com/albasonamakeup" target="_blank"><img src="/img/icon-facebook-pink.png" alt="Facebook"></a>
-                    <a href="https://wa.me/34612345678" target="_blank"><img src="/img/icon-whatsapp-pink.png" alt="WhatsApp"></a>
+                    <a href="https://www.instagram.com/albasonamakeup" target="_blank">
+                        <Image src={iconInsta} alt="Instagram" />
+                    </a>
+                    <a href="https://www.facebook.com/albasonamakeup" target="_blank">
+                        <Image src={iconFb} alt="Facebook" />
+                    </a>
+                    <a href="https://wa.me/34612345678" target="_blank">
+                        <Image src={iconWa} alt="WhatsApp" />
+                    </a>
                 </div>
             </div>
             <div class="footer-copy">
