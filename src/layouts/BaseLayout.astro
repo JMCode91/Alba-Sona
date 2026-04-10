@@ -78,10 +78,27 @@ const { title } = Astro.props;
                 </div>
             </div>
                 <div class="footer-copy">
-                    <p>&copy; 2026 Alba Sona Makeup. Todos los derechos reservados.</p>
+                    <p>
+                         &copy; {new Date().getFullYear()} Alba Sona Makeup. Todos los derechos reservados. 
+                         <a href="/aviso-legal">Aviso Legal</a> | 
+                         <a href="/politica-privacidad">Privacidad</a>
+                    </p>
                     <p class="firma-dev">Desarrollado por <a href="https://portfolio-eta-drab-94.vercel.app/" target="_blank">JMCode91</a></p>
                 </div>
         </div>
     </footer>
 </body>
 </html>
+
+<style>
+.footer-copy a {
+    color: inherit; /* Toma el mismo color que el texto de alrededor */
+    text-decoration: none; /* Quita el subrayado por defecto */
+    opacity: 0.8; /* Lo hace un pelín más suave */
+}
+
+.footer-copy a:hover {
+    text-decoration: underline; /* Solo se subraya al pasar el ratón */
+    opacity: 1;
+}
+</style>

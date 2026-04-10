@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Aviso Legal | Alba Sona Makeup">
+    <main class="legal-page">
+        <section class="contenedor-documento">
+            <div class="tarjeta-legal">
+                <header class="legal-header">
+                    <a href="/contacto" class="link-volver">← Volver a contacto</a>
+                    <h1>Aviso Legal</h1>
+                    <p class="fecha-actualizacion">Información obligatoria (LSSI-CE)</p>
+                </header>
+
+                <div class="legal-cuerpo">
+                    <div class="legal-item">
+                        <h3>1. Datos Identificativos</h3>
+                        <p>En cumplimiento con el deber de información recogido en artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, a continuación se reflejan los siguientes datos:</p>
+                        <ul class="lista-datos">
+                            <li><strong>Titular:</strong> [NOMBRE COMPLETO DE ALBA]</li>
+                            <li><strong>NIF/DNI:</strong> [NIF AQUÍ]</li>
+                            <li><strong>Domicilio:</strong> [DIRECCIÓN COMPLETA O CIUDAD]</li>
+                            <li><strong>Correo electrónico:</strong> info@albasonamakeup.com</li>
+                            <li><strong>Actividad:</strong> Maquillaje Profesional y Servicios de Estética</li>
+                        </ul>
+                    </div>
+
+                    <div class="legal-item">
+                        <h3>2. Usuarios</h3>
+                        <p>El acceso y/o uso de este portal atribuye la condición de USUARIO, que acepta, desde dicho acceso y/o uso, las Condiciones Generales de Uso aquí reflejadas.</p>
+                    </div>
+
+                    <div class="legal-item">
+                        <h3>3. Uso del Portal</h3>
+                        <p>La web proporciona el acceso a multitud de informaciones, servicios o datos en Internet pertenecientes a Alba Sona. El USUARIO asume la responsabilidad del uso del portal.</p>
+                    </div>
+
+                    <div class="legal-item">
+                        <h3>4. Propiedad Intelectual e Industrial</h3>
+                        <p>Alba Sona por sí o como cesionaria, es titular de todos los derechos de propiedad intelectual e industrial de su página web, así como de los elementos contenidos en la misma (a título enunciativo, imágenes, sonido, audio, vídeo, software o textos; marcas o logotipos, combinaciones de colores, estructura y diseño, etc.).</p>
+                        <p>Queda expresamente prohibida la reproducción, la distribución y la comunicación pública de la totalidad o parte de los contenidos de esta página web con fines comerciales, en cualquier soporte y por cualquier medio técnico, sin la autorización de Alba Sona.</p>
+                    </div>
+
+                    <div class="legal-item">
+                        <h3>5. Exclusión de Garantías y Responsabilidad</h3>
+                        <p>Alba Sona no se hace responsable, en ningún caso, de los daños y perjuicios de cualquier naturaleza que pudieran ocasionar, a título enunciativo: errores u omisiones en los contenidos, falta de disponibilidad del portal o la transmisión de virus o programas maliciosos o lesivos en los contenidos, a pesar de haber adoptado todas las medidas tecnológicas necesarias para evitarlo.</p>
+                    </div>
+
+                    <div class="legal-item">
+                        <h3>6. Modificaciones</h3>
+                        <p>Alba Sona se reserva el derecho de efectuar sin previo aviso las modificaciones que considere oportunas en su portal, pudiendo cambiar, suprimir o añadir tanto los contenidos y servicios que se presten a través de la misma como la forma en la que éstos aparezcan presentados o localizados en su portal.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+
+<style>
+    .legal-page {
+        background-color: var(--color-suave);
+        padding: 180px 5% 100px;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    .contenedor-documento {
+        width: 100%;
+        max-width: 850px;
+    }
+
+    .tarjeta-legal {
+        background-color: #ffffff;
+        padding: 60px;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    }
+
+    .legal-header {
+        border-bottom: 1px solid var(--color-suave);
+        padding-bottom: 30px;
+        margin-bottom: 40px;
+    }
+
+    .link-volver {
+        display: inline-block;
+        color: var(--color-secundario);
+        text-decoration: none;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+        font-family: var(--fuente-textos);
+        transition: opacity 0.3s ease;
+    }
+    .link-volver:hover { opacity: 0.7; }
+
+    .legal-header h1 {
+        font-family: var(--fuente-titulos);
+        color: var(--color-texto);
+        font-size: 2.8rem;
+        font-weight: 500;
+        margin: 0;
+    }
+
+    .fecha-actualizacion {
+        color: var(--color-secundario);
+        font-size: 0.85rem;
+        font-style: italic;
+        margin-top: 10px;
+    }
+
+    .legal-cuerpo {
+        font-family: var(--fuente-textos);
+        color: var(--color-texto);
+        line-height: 1.8;
+    }
+
+    .legal-item {
+        margin-bottom: 35px;
+    }
+
+    .legal-item h3 {
+        font-size: 1.2rem;
+        color: var(--color-texto);
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+
+    .legal-item p, .legal-item li {
+        font-size: 1rem;
+        color: var(--color-secundario);
+    }
+
+    .lista-datos {
+        list-style: none;
+        padding: 0;
+        margin-top: 15px;
+        background: var(--color-suave);
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .lista-datos li {
+        margin-bottom: 8px;
+    }
+
+    @media (max-width: 768px) {
+        .legal-page { padding-top: 140px; }
+        .tarjeta-legal { padding: 40px 25px; }
+        .legal-header h1 { font-size: 2rem; }
+    }
+</style>
