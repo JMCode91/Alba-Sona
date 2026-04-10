@@ -47,7 +47,57 @@ import iconWaColor from '../assets/img/icon-whatsapp-color.png';
                     
                 </div>
 
-                <div class="contacto-metodos">
+                <div class="formulario-contenedor">
+                <div class="formulario-textos">
+                    <h2>¿Listo para tu transformación?</h2>
+                    <p>Cuéntame los detalles de tu evento y me pondré en contacto contigo.</p>
+                </div>
+
+                <form id="form-contacto" method="POST" class="form-grid">
+                    <input type="hidden" name="access_key" value={"4e9aadba-78eb-4bfb-b96a-9753cde072e8"} />
+                    <input type="hidden" name="subject" value="Nueva solicitud desde AlbaSona.com" />
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+
+                    <div class="campo">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" name="name" id="name" required placeholder="Tu nombre" />
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" name="email" id="email" required placeholder="email@ejemplo.com" />
+                    </div>
+
+                    <div class="campo md-span-2">
+                        <label for="message">Cuéntame sobre tu evento (fecha, tipo de maquillaje, etc.)</label>
+                        <textarea name="message" id="message" rows="5" required placeholder="¿Cómo puedo ayudarte?"></textarea>
+                    </div>
+
+                    <div class="campo-check md-span-2">
+                        <input type="checkbox" id="privacy" required />
+                        <label for="privacy">Acepto la <a href="/politica-privacidad">política de privacidad</a></label>
+                    </div>
+
+                    <div class="md-span-2 centro">
+                        <button type="submit" id="submit-btn" class="btn-principal">
+                            Enviar Mensaje
+                        </button>
+                        <div id="result" class="mensaje-resultado"></div>
+                    </div>
+
+                    
+                </form>
+                <div class="nota-contacto">
+                        <p>✨ Respondo todos los mensajes en un máximo de 24 horas. Para citas urgentes, prefiero contactar por WhatsApp.</p>
+                    </div>
+            </div>
+          
+            </div>
+         
+        </section>
+
+        <section class="seccion-redes" id="escribeme">
+            <div class="contacto-metodos">
                     <h2>Sígueme y Contáctame</h2>
                     
                     <div class="contacto-grid-tarjetas">
@@ -82,17 +132,8 @@ import iconWaColor from '../assets/img/icon-whatsapp-color.png';
                         </div>
                     </div>
 
-                    <div class="nota-contacto">
-                        <p>✨ Respondo todos los mensajes en un máximo de 24 horas. Para citas urgentes, prefiero contactar por WhatsApp.</p>
-                    </div>
+                    
                 </div>
-            </div>
-        </section>
-
-        <section class="cta-cierre">
-            <h2>¿Listo para tu transformación?</h2>
-            <p>Envíame un mensaje con los detalles de tu evento o proyecto</p>
-            <a href="https://wa.me/34612345678" class="btn-principal">Contactar por WhatsApp</a>
         </section>
     </main>
 
@@ -198,4 +239,126 @@ import iconWaColor from '../assets/img/icon-whatsapp-color.png';
             box-sizing: border-box;
         }
     }
+
+
+    /* =========================================
+       NUEVOS ESTILOS PARA EL FORMULARIO
+       ========================================= */
+    .seccion-redes { 
+        padding: 100px 5%; 
+        background: linear-gradient(135deg, var(--color-suave) 0%, var(--color-fondo) 100%);
+    }
+    
+    .formulario-contenedor { max-width: 800px; margin: 0 auto; }
+    
+    .formulario-textos { text-align: center; margin-bottom: 50px; }
+    .formulario-textos h2 { font-family: var(--fuente-titulos); font-size: 2.8rem; color: var(--color-texto); margin-bottom: 15px; }
+    
+    .form-grid { 
+        display: grid; 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 25px; 
+        background: white; 
+        padding: 40px; 
+        border-radius: 15px; 
+        box-shadow: 0 15px 40px rgba(0,0,0,0.05); 
+    }
+    
+    .md-span-2 { grid-column: span 2; }
+    .centro { text-align: center; }
+
+    .campo { display: flex; flex-direction: column; gap: 8px; }
+    .campo label { font-family: var(--fuente-textos); font-weight: 600; font-size: 0.9rem; color: var(--color-texto); }
+    
+    .campo input, .campo textarea {
+        padding: 12px 18px;
+        border: 1px solid var(--color-suave);
+        border-radius: 8px;
+        font-family: var(--fuente-textos);
+        outline: none;
+        transition: border-color 0.3s ease;
+    }
+
+    .campo input:focus, .campo textarea:focus { border-color: var(--color-primario); }
+
+    .campo-check { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+    .campo-check label { font-size: 0.85rem; color: var(--color-secundario); }
+    .campo-check a { color: var(--color-primario); text-decoration: underline; }
+
+    .mensaje-resultado { margin-top: 20px; font-family: var(--fuente-textos); font-weight: 600; font-size: 0.95rem; min-height: 24px; }
+    .exito { color: #2d8a5a; }
+    .error { color: #b23b3b; }
+
+    @media (max-width: 768px) {
+        .form-grid { grid-template-columns: 1fr; padding: 25px; }
+        .md-span-2 { grid-column: auto; }
+        .formulario-textos h2 { font-size: 2rem; }
+    }
+
+    
 </style>
+
+<script is:inline>
+  // Usamos este evento para que funcione siempre, incluso al navegar entre páginas
+  document.addEventListener('astro:page-load', () => {
+    const form = document.getElementById('form-contacto');
+    const result = document.getElementById('result');
+    const btn = document.getElementById('submit-btn');
+
+    // Si por algún motivo no encuentra el formulario, se para aquí y no rompe nada
+    if (!form) return;
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Bloqueamos el botón para evitar múltiples envíos
+      btn.disabled = true;
+      const textoOriginal = btn.innerHTML;
+      btn.innerHTML = "Enviando...";
+      
+      if(result) result.innerHTML = "Procesando mensaje...";
+
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+
+      fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+          },
+          body: json
+      })
+      .then(async (response) => {
+          let jsonRes = await response.json();
+          if (response.status == 200) {
+              if(result) {
+                result.style.color = "green";
+                result.innerHTML = "¡Mensaje enviado con éxito!";
+              }
+              form.reset();
+          } else {
+              if(result) {
+                result.style.color = "red";
+                result.innerHTML = jsonRes.message;
+              }
+          }
+      })
+      .catch(error => {
+          if(result) {
+            result.style.color = "red";
+            result.innerHTML = "Error al conectar con el servidor.";
+          }
+      })
+      .finally(() => {
+          btn.disabled = false;
+          btn.innerHTML = textoOriginal;
+          // Limpiar el mensaje de éxito/error a los 5 segundos
+          setTimeout(() => {
+              if(result) result.innerHTML = "";
+          }, 5000);
+      });
+    });
+  });
+</script>

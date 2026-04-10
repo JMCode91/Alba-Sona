@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Política de Privacidad | Alba Sona Makeup">
+    <main class="privacidad-page">
+        <section class="contenedor-documento">
+            <div class="tarjeta-legal">
+                <header class="legal-header">
+                    <a href="/contacto" class="link-volver">← Volver a contacto</a>
+                    <h1>Política de Privacidad</h1>
+                    <p class="fecha-actualizacion">Última actualización: Abril 2026</p>
+                </header>
+
+                <div class="legal-cuerpo">
+                    <p>En cumplimiento con el Reglamento General de Protección de Datos (RGPD), se informa a los usuarios sobre el tratamiento de sus datos personales:</p>
+
+                    <div class="legal-item">
+                        <h3>1. Responsable del Tratamiento</h3>
+                        <p>La responsable de los datos recogidos es <strong>Alba Sona</strong>, con correo electrónico de contacto <strong>info@albasonamakeup.com</strong>.</p>
+                    </div>
+
+                    <div class="legal-item">
+                        <h3>2. Finalidad del Tratamiento</h3>
+                        <p>Los datos facilitados a través del formulario de contacto se utilizarán exclusivamente para:</p>
+                        <ul>
+                            <li>Gestionar y responder a las solicitudes de información sobre servicios de maquillaje y eventos.</li>
+                            <li>Coordinar citas y presupuestos personalizados.</li>
+                        </ul>
+                    </div>
+
+                    <div class="legal-item">
+                        <h3>3. Legitimación</h3>
+                        <p>La base legal es el <strong>consentimiento explícito</strong> del usuario al marcar la casilla de aceptación en el formulario antes de realizar el envío.</p>
+                    </div>
+
+                    <div class="legal-item">
+                        <h3>4. Conservación de los Datos</h3>
+                        <p>Los datos se conservarán durante el tiempo necesario para cumplir con la finalidad para la que fueron recabados o hasta que el interesado solicite su supresión.</p>
+                    </div>
+
+                    <div class="legal-item">
+                        <h3>5. Destinatarios</h3>
+                        <p>Tus datos no se cederán a terceros, salvo obligación legal. Para el envío de mensajes se utiliza el servicio de <strong>Web3Forms</strong>, que actúa como encargado del tratamiento bajo estándares de seguridad y privacidad.</p>
+                    </div>
+
+                    <div class="legal-item">
+                        <h3>6. Derechos</h3>
+                        <p>Puedes ejercer tus derechos de acceso, rectificación, limitación y supresión de tus datos enviando un correo electrónico a <strong>info@albasonamakeup.com</strong>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+
+<style>
+    .privacidad-page {
+        background-color: var(--color-suave); /* Fondo sutil de la web */
+        padding: 180px 5% 100px;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    .contenedor-documento {
+        width: 100%;
+        max-width: 850px;
+    }
+
+    .tarjeta-legal {
+        background-color: #ffffff;
+        padding: 60px;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    }
+
+    .legal-header {
+        border-bottom: 1px solid var(--color-suave);
+        padding-bottom: 30px;
+        margin-bottom: 40px;
+    }
+
+    .link-volver {
+        display: inline-block;
+        color: var(--color-secundario);
+        text-decoration: none;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+        font-family: var(--fuente-textos);
+        transition: opacity 0.3s ease;
+    }
+    .link-volver:hover { opacity: 0.7; }
+
+    .legal-header h1 {
+        font-family: var(--fuente-titulos);
+        color: var(--color-texto);
+        font-size: 2.8rem;
+        font-weight: 500;
+        margin: 0;
+    }
+
+    .fecha-actualizacion {
+        color: var(--color-secundario);
+        font-size: 0.85rem;
+        font-style: italic;
+        margin-top: 10px;
+    }
+
+    .legal-cuerpo {
+        font-family: var(--fuente-textos);
+        color: var(--color-texto);
+        line-height: 1.8;
+    }
+
+    .legal-item {
+        margin-bottom: 35px;
+    }
+
+    .legal-item h3 {
+        font-size: 1.2rem;
+        color: var(--color-texto);
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+
+    .legal-item p, .legal-item li {
+        font-size: 1rem;
+        color: var(--color-secundario);
+    }
+
+    .legal-item ul {
+        padding-left: 20px;
+        margin-top: 10px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .privacidad-page { padding-top: 140px; }
+        .tarjeta-legal { padding: 40px 25px; }
+        .legal-header h1 { font-size: 2rem; }
+    }
+</style>
