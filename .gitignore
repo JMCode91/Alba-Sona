@@ -7,3 +7,5 @@ dist/
 # Cache y logs
 .astro/
 npm-debug.log*
+
+.env
