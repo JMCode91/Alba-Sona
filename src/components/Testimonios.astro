@@ -119,7 +119,16 @@ import testimonioImg from '../assets/img/testimonio-hero.webp';
     
     .slider-indicadores { display: flex; gap: 12px; align-items: center; }
     
-    .dot { width: 8px; height: 8px; background-color: var(--color-texto); opacity: 0.2; border-radius: 50%; transition: all 0.3s ease; }
+    /* AÑADIDO: cursor: pointer para que se sepa que es clicable */
+    .dot { 
+        width: 8px; 
+        height: 8px; 
+        background-color: var(--color-texto); 
+        opacity: 0.2; 
+        border-radius: 50%; 
+        transition: all 0.3s ease; 
+        cursor: pointer; 
+    }
     .dot.activo { opacity: 0.8; transform: scale(1.3); }
     
     .testimonio-origen { text-transform: none; font-style: italic; font-size: 0.8em; opacity: 0.6; font-weight: 400; margin-left: 8px; }
@@ -133,23 +142,50 @@ import testimonioImg from '../assets/img/testimonio-hero.webp';
     }
 </style>
 
-<script>
+<script is:inline>
+  document.addEventListener('astro:page-load', () => {
     const slides = document.querySelectorAll('.testimonio-slide');
     const dots = document.querySelectorAll('.dot'); 
     
-    if (slides.length > 0) {
-        let currentSlide = 0;
+    if (!slides.length || !dots.length) return;
 
-        function nextSlide() {
-            slides[currentSlide].classList.remove('activo');
-            if (dots.length > 0) dots[currentSlide].classList.remove('activo');
-            
-            currentSlide = (currentSlide + 1) % slides.length;
-            
-            slides[currentSlide].classList.add('activo');
-            if (dots.length > 0) dots[currentSlide].classList.add('activo');
-        }
+    let currentSlide = 0;
 
-        setInterval(nextSlide, 6000);
+    // Función para saltar a una reseña concreta
+    function goToSlide(index) {
+        slides[currentSlide].classList.remove('activo');
+        dots[currentSlide].classList.remove('activo');
+        
+        currentSlide = index;
+        
+        slides[currentSlide].classList.add('activo');
+        dots[currentSlide].classList.add('activo');
     }
+
+    // Función para avanzar al siguiente automático
+    function nextSlide() {
+        let nextIndex = (currentSlide + 1) % slides.length;
+        goToSlide(nextIndex);
+    }
+
+    // Limpiamos temporizadores previos por si el usuario navegó por la web
+    if (window.sliderTestimoniosTimer) {
+        clearInterval(window.sliderTestimoniosTimer);
+    }
+
+    // Arrancamos el temporizador y lo guardamos globalmente
+    window.sliderTestimoniosTimer = setInterval(nextSlide, 6000);
+
+    // Eventos de clic para las bolitas (dot)
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            // 1. Paramos el reloj temporalmente
+            clearInterval(window.sliderTestimoniosTimer);
+            // 2. Mostramos la reseña que el usuario quiere ver
+            goToSlide(index);
+            // 3. Reiniciamos el reloj de 6 segundos
+            window.sliderTestimoniosTimer = setInterval(nextSlide, 6000);
+        });
+    });
+  });
 </script>
